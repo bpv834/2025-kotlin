@@ -118,6 +118,11 @@ data class People(
 )
 ```
 
+## 데이터 클래스 상속을 막는 이유
+
+Kotlin의 data class는 값 비교와 복사를 위해 equals, hashCode, copy 등을 자동 생성하는데, 상속을 허용하면 이 메서드들의 일관성이 깨질 수 있습니다.
+그래서 컴파일러는 데이터의 불변성과 일관성을 보장하기 위해 data class를 final로 만들어 상속을 금지합니다.
+
 이 클래스는 프로퍼티가 2개이다. 이 때 선언 순서가 name 다음에 age 형태로 되어있기 때문에, component1() 메소드에 name 필드가 대응되고, component2() 메소드에 age 필드가 대응되게 된다. 
 
 <img width="586" height="95" alt="image" src="https://github.com/user-attachments/assets/60d6d78f-0430-45c8-be19-d050ee394b88" />
